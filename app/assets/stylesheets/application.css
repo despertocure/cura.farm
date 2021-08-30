@@ -1,0 +1,229 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+a {
+  color: #444444;
+}
+
+.field_with_errors input {
+  border: 1px solid #ff4036;
+}
+
+.toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 62px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #707070;
+  transition: background-color ease 0.3s;
+}
+
+.toggle:before {
+  content: "sim nao";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  left: 2px;
+  top: 2px;
+  font: 10px/28px Helvetica;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-indent: -25px;
+  word-spacing: 37px;
+  color: #fff;
+  text-shadow: -1px -1px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+}
+
+.toggle:checked {
+  background-color: #16a92f;
+}
+
+.toggle:checked:before {
+  left: 32px;
+}
+
+.progress-bar {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.primary-blue {
+  color: #1d809f;
+}
+
+.bg-primary-blue {
+  background-color: #2c2b3c;
+}
+
+.bb--primary-blue {
+  border: none !important;
+  border-bottom: 4px solid #000000 !important;
+}
+
+.hover-bg-primary-blue:hover,
+.hover-bg-primary-blue:active
+{
+  background-color: #000000;
+}
+
+.bb-blue {
+  border: none !important;
+  border-bottom: 4px solid #00449e !important;
+}
+
+.bg-a21-purple {
+  background-color: #575a89
+}
+
+.bb-a21-purple {
+  border: none !important;
+  border-bottom: 4px solid #37384a !important;
+}
+
+.bg-a21-green {
+  background-color: #56b492;
+}
+
+.bb-a21-green {
+  border: none !important;
+  border-bottom: 4px solid #56b492 !important;
+}
+
+.bb-purple {
+  border: none !important;
+  border-bottom: 4px solid #440c86 !important;
+}
+
+.bb-red {
+  border: none !important;
+  border-bottom: 4px solid #981b14 !important;
+}
+
+.bb-green {
+  border: none !important;
+  border-bottom: 4px solid #127953 !important;
+}
+
+.bg-darker-red {
+  background-color: #c7271d;
+}
+
+.hover-bg-darkest-red:hover,
+.hover-bg-darkest-red:focus {
+  background-color: #981b14;
+}
+
+@media screen and (min-width: 60em) {
+  .f0-l {
+    font-size: 8rem;
+  }
+}
+
+.admin-sans-serif {
+  font-family: 'Muli', sans-serif;
+}
+
+.spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.spinner div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.spinner div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spinner div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.pill-button {
+  padding: .5rem 1rem;
+  display: inline-block;
+  margin-bottom: 1em;
+  border-radius: 3px;
+  background-color: #eee;
+  border-bottom: 4px solid #ddd;
+  cursor: pointer;
+}
+.pill-button input {
+  position: absolute;
+  top: -999px;
+}
+.pill-button-selected {
+  background-color: #2c2b3c;
+  color: #ffffff;
+  border-bottom: 4px solid #000;
+}
+.tab-button {
+  display: inline-block;
+  border: 1px solid #666666;
+  border-bottom: none;
+  border-radius: 8px 8px 0px 0px;
+  font-weight: bold;
+  padding: .5rem 1rem;
+  margin-right: .4rem;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.tab-button input {
+  display: none;
+}
+
+.tab-panels {
+  border-top: 1px solid #333;
+}
+
+.tab-panel {
+  display: block;
+  border: 1px solid #333;
+  border-top: none;
+  padding: 2em;
+}

@@ -1,0 +1,45 @@
+<% content_for :title, t('admin.users.edit') %>
+
+<% content_for :breadcrumb do %>
+  <%= breadcrumb(t('admin.users.edit')) %>
+<% end %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= fieldset 'Identificação', 'id-card-o' do %>
+    <%= f.label :avatar %>
+    <%= f.image_field :avatar %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, required: true %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+
+    <%= f.label :bio %>
+    <%= f.trix_editor_field :bio, id: :user_bio %>
+  <% end %>
+
+  <%= fieldset 'Senhas', 'lock' do %>
+    <p class='mt0 mb4 f5 i b'>
+      Preencha os campos abaixo apenas se você quiser alterar sua senha.
+    </p>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.explanation :password, 'deixe em branco caso você não queira alterar' %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.explanation :password_confirmation, 'no mínimo 6 letras' if @minimum_password_length %>
+  <% end %>
+
+  <%= fieldset 'Confirmação da Senha', 'check-circle-o' do %>
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.explanation :current_password, '(Precisamos da sua senha atual para confirmar as mudanças)' %>
+  <% end %>
+
+  <%= f.submit 'Salvar' %>
+<% end %>

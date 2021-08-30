@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="<%= favicon(32) %>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= favicon(180) %>">
+    <link rel="icon" type="image/png" sizes="64x64" href="<%= favicon(64) %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= favicon(32) %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= favicon(16) %>">
+  </head>
+
+  <body class='admin-sans-serif lh-copy dark-gray' admin='true'>
+    <%= render 'layouts/i18n' %>
+    <%= render 'layouts/skip_to_content' %>
+    <%= render 'layouts/messages' %>
+
+    <header>
+      <%= render 'layouts/menu' %>
+    </header>
+
+    <main id='admin-content'>
+      <% if content_for?(:hero) %>
+        <%== yield :hero %>
+      <% end %>
+
+      <% unless @supress_main %>
+        <div class='pa4 ph4-ns ph7-l dib w-100'>
+          <% if content_for?(:breadcrumb) %>
+            <%== yield :breadcrumb %>
+          <% end %>
+
+          <% if content_for?(:title) %>
+            <h1 class='mb4 fw9 f3 f2-l tc tl-l'>
+              <%== yield :title %>
+            </h1>
+          <% end %>
+
+          <%= yield %>
+        </div>
+      <% end %>
+    </main>
+  </body>
+</html>

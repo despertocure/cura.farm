@@ -1,0 +1,31 @@
+.field_with_errors {
+}
+
+trix-toolbar {
+  margin-top: .5rem;
+}
+
+trix-toolbar .trix-button-group {
+  margin-bottom: 0px;
+  border: none;
+}
+
+trix-toolbar .trix-button {
+  border-bottom: none;
+}
+
+trix-toolbar .trix-button-row {
+  justify-content: flex-start;
+  border: 1px solid #bbb;
+  border-bottom: none;
+}
+
+trix-editor {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: .5rem;
+}
+
+figure.attachment--preview {
+  margin-left: 0;
+}

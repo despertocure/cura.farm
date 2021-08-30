@@ -1,0 +1,99 @@
+trix-toolbar,
+trix-editor {
+  background-color: white;
+}
+
+.trix-button-row {
+  border-top: 1px solid rgba(0,0,0,.4) !important;
+  border-left: 1px solid rgba(0,0,0,.4) !important;
+  border-right: 1px solid rgba(0,0,0,.4) !important;
+  border-bottom: none !important;
+}
+
+trix-toolbar .trix-button--icon {
+  font-family: 'FontAwesome';
+  line-height: 26px;
+  color: #000000;
+  opacity: 1;
+}
+
+trix-toolbar .trix-button {
+  border-left: 1px solid #ccc;
+}
+
+trix-toolbar .trix-button-group--text-tools .trix-button:first-child {
+  border-left: 0;
+}
+
+trix-toolbar .trix-button--icon:disabled::before {
+  opacity: 1;
+}
+
+trix-toolbar .trix-button--icon::before {
+  background-image: none !important;
+  text-indent: 0;
+}
+
+trix-toolbar .trix-button--icon-bold::before {
+  content: "\f032";
+}
+trix-toolbar .trix-button--icon-italic::before {
+  content: "\f033";
+}
+trix-toolbar .trix-button--icon-link::before {
+  content: "\f0c1";
+}
+trix-toolbar .trix-button--icon-strike::before {
+  content: "\f0cc";
+}
+trix-toolbar .trix-button--icon-quote::before {
+  content: "\f10e";
+}
+trix-toolbar .trix-button--icon-heading-1::before {
+  content: "\f1dc 1";
+}
+trix-toolbar .trix-button--icon-heading-2::before {
+  content: "\f1dc 2";
+}
+trix-toolbar .trix-button--icon-code::before {
+  content: "\f121";
+}
+trix-toolbar .trix-button--icon-bullet-list::before {
+  content: "\f0ca";
+}
+trix-toolbar .trix-button--icon-number-list::before {
+  content: "\f0cb";
+}
+trix-toolbar .trix-button--icon-undo::before {
+  content: "\f0e2";
+}
+trix-toolbar .trix-button--icon-redo::before {
+  content: "\f01e";
+}
+trix-toolbar .trix-button--icon-decrease-nesting-level::before {
+  content: "\f03b";
+}
+trix-toolbar .trix-button--icon-increase-nesting-level::before {
+  content: "\f03c";
+}
+trix-toolbar .trix-button--icon-attach::before {
+  content: "\f03e";
+}
+
+trix-editor {
+  border: 1px solid rgba(0,0,0,.4);
+  border-radius: 3px;
+  margin: 0;
+  padding: 0.4em 0.6em;
+  min-height: 7em;
+  outline: none;
+}
+
+@media (max-width: 726px) {
+  trix-toolbar .trix-button {
+    width: 2.33em;
+    font-size: 10px;
+    line-height: 23px;
+    height: 22px;
+  }
+}

@@ -1,0 +1,13 @@
+.bg--dark { background: #252525; }
+.h6 { height: 32rem; }
+
+@media screen and (min-width: 60em) {
+  .ph7-l {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+
+  .h6-l {
+    height: 32rem;
+  }
+}

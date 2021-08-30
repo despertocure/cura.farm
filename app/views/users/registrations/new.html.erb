@@ -1,0 +1,26 @@
+<section class='<%= form_container_classes %> mb6'>
+  <h1 class='mb4 f3 f2-l tc fw9'>
+    <%= t('welcome.sign_up') %>
+  </h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off" %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.explanation :password, t('welcome.at_lest_6') if @minimum_password_length %>
+
+    <%= f.submit t('welcome.sign_up') %>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</section>

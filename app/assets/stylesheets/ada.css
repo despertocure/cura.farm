@@ -1,0 +1,13 @@
+.skip-to-content {
+  position: absolute;
+  top: 5px;
+  left: -999px;
+  border: 2px solid blue;
+  background-color: white;
+  padding: 8px;
+  color: #333333;
+}
+
+.skip-to-content:focus {
+  left: 5px;
+}

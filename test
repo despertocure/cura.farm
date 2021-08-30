@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ruby -e 'puts "\e[4m\e[32m# Executing Bundler Audit \e[0m\e[24m\n\n"' && \
+bundle audit check --update && \
+
+ruby -e 'puts "\e[4m\e[32m# Executing Rubocop \e[0m\e[24m\n\n"' && \
+rubocop -A && \
+
+ruby -e 'puts "\e[4m\e[32m# Awesome... \e[0m\e[24m\n"'

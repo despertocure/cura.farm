@@ -1,0 +1,13 @@
+<% if notice %>
+  <p id='alert' class="db pa3 tc bg-green bb-green ma0 white w-100 w5-l fixed bottom-0 right-0 bottom-1-l left-1-l">
+    <%= icon('info-circle') %>
+    <%= raw notice %>
+  </p>
+<% end %>
+
+<% if alert %>
+  <p id='alert' class="db pa3 tc bg-red bb-red ma0 white w-100 w5-l fixed bottom-0 right-0 bottom-1-l left-1-l">
+    <%= icon('exclamation-triangle') %>
+    <%= raw alert %>
+  </p>
+<% end %>

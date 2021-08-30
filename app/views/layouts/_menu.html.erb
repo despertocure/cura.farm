@@ -1,0 +1,54 @@
+<nav class='dib dt-l w-100 border-box pa1 ph7-l'>
+  <div class='dn db-l v-mid w-100 w-40-l tc tl-l'>
+    <span class='dib tc tl-l mv2 mv0-l f4 b ttu black-80 fl ml3 ml0-l' style="letter-spacing: -1px;">
+      <%= link_to '/', class: 'f2 f5-l fw6 ma0 ml0-l ma3-l pa3 pr4 pa0-l dib black-80 no-underline w-100 tr tl-l flex' do %>
+        <span class="f4 fw9 ml3">Cura Farm</span>
+      <% end %>
+    </span>
+  </div>
+
+  <div class="dn db-l fr">
+    <div class='db dtc-l v-mid w-100 w-75-l tc tr-l'>
+    <% if user_signed_in? %>
+      <%= link_to t('admin.menu.sign_out'), destroy_user_session_path, class: 'dib pa3', method: :delete %>
+    <% else %>
+      <%= link_to t('admin.menu.sign_up'), new_user_registration_path, class: 'dib pa3' %>
+      <%= link_to t('admin.menu.sign_in'), new_user_session_path, class: 'dib pa3' %>
+    <% end %>
+    </div>
+  </div>
+
+  <%= link_to '/', class: 'dib dn-l tc mv2 f4 b ttu fw9 no-underline ml3 black-80 fl mr3 pa3 bn pointer' do %>
+    Cura Farm
+  <% end %>
+
+  <button id="landing-menu-button" type="button" class='dib dn-l tc mv2 fw5 f3 b ttu fw7 bg-transparent black-80 fr mr3 pa3 bn pointer'>
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div class="dn pa0 w-100 h-100 ma0 pt6 absolute top-0 left-0 bg-white z-999" id="landing-menu">
+    <button id="landing-menu-close-button" type="button" class='absolute top-0 right-0 black-80 bn bg-transparent b fw9 f1 pointer pa4'>
+      &times;
+    </button>
+
+    <% if user_signed_in? %>
+      <%= link_to t('admin.menu.sign_out'), destroy_user_session_path, class: '', method: :delete %>
+    <% else %>
+      <%= link_to t('admin.menu.sign_up'), new_user_registration_path, class: 'dib w-100 pa3 tr f3' %>
+      <%= link_to t('admin.menu.sign_in'), new_user_session_path, class: 'dib w-100 pa3 tr f3' %>
+    <% end %>
+  </div>
+</nav>
+
+<script type="text/javascript">
+  $('#landing-menu-button').click(function () {
+    $('body').addClass('overflow-hidden');
+    $('#landing-menu').show();
+    $('#landing-menu ul a:first').focus();
+  });
+
+  $('#landing-menu-close-button').click(function () {
+    $('body').removeClass('overflow-hidden');
+    $('#landing-menu').hide();
+  });
+</script>

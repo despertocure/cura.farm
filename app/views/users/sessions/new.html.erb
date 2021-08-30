@@ -1,0 +1,17 @@
+<section class='<%= form_container_classes %>'>
+  <h1 class='mb4 f3 f2-l tc fw9'>
+    <%= t('welcome.sign_in') %>
+  </h1>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off" %>
+
+    <%= f.submit t('welcome.sign_in') %>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</section>

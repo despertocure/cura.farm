@@ -1,0 +1,24 @@
+<section class='<%= form_container_classes %>'>
+  <h1 class='mb4 f3 f2-l tc'>
+    <%= t('welcome.forgot_my_password') %>
+  </h1>
+
+  <div class="w-100 tc">
+    <img src="https://res.cloudinary.com/hab6pkdiw/image/upload/v1589930942/assets/undraw_forgot_password_gi2d.png" class="w4" />
+  </div>
+
+  <p class='f5 f3-l fw2 lh-copy'>
+    <%= t('welcome.dont_worry_recovery_password') %>
+  </p>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+
+    <%= f.submit t('welcome.send_password_recovery_instruction') %>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</section>
